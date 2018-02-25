@@ -9,7 +9,7 @@ void setup() {
 }
 
 void draw() {
-  if (mousePressed == true) {
+  if (mousePressed) {
     background(255);
     rect(mouseX, mouseY, 10, 10);
     b1.update();
@@ -19,21 +19,26 @@ void draw() {
     b1.update();
     b2.update();
   }
+  
 }
 
 class Blokje {
-  float xPos, yPos;
+  float xPos, yPos, xWidth = 10, yHeight = 10;
   Blokje(float xPos, float yPos) {
     this.xPos = xPos;
     this.yPos = yPos;
-    rect(xPos, yPos, 10, 10);
+    rect(xPos, yPos, xWidth, yHeight);
   }
   
   void update() {
-    if (mousePressed == true) {
+    if (mousePressed && (mouseButton == LEFT)) {
       xPos++;
       yPos++;
     }
-    rect(xPos, yPos, 10, 10);
+    if (mousePressed && (mouseButton == RIGHT)) {
+      xWidth++;
+      yHeight++;
+    }
+    rect(xPos, yPos, xWidth, yHeight);
   }
 }
