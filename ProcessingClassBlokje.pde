@@ -13,8 +13,8 @@ void draw() {
   Blokje b1 = new Blokje(20, 20);
   Blokje b2 = new Blokje(50, 20);
   
-  b1.Show();
-  b2.Show();
+  b1.show();
+  b2.show();
 }
 
 class Blokje {
@@ -24,7 +24,7 @@ class Blokje {
     this.yPos = yPos;
   }
   
-  void Show() {
+  void show() {
     rect(xPos, yPos, 10, 10);
   }
 }
