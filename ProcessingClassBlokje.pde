@@ -9,15 +9,19 @@ void setup() {
 }
 
 void draw() {
+  background(255);
   if (mousePressed) {
-    background(255);
     rect(mouseX, mouseY, 10, 10);
-    b1.update();
-    b2.update();
-  } else {
-    background(255);
-    b1.update();
-    b2.update();
+  }    
+  b1.update();
+  b2.update();
+  if (mousePressed && (mouseButton == LEFT)) {
+    b1.move();
+    b2.move();
+  }
+  if (mousePressed && (mouseButton == RIGHT)) {
+    b1.grow();
+    b2.grow();
   }
   
 }
@@ -31,14 +35,21 @@ class Blokje {
   }
   
   void update() {
+    rect(xPos, yPos, xWidth, yHeight);
+  }
+  
+  void move() {
     if (mousePressed && (mouseButton == LEFT)) {
       xPos++;
       yPos++;
     }
+    rect(xPos, yPos, xWidth, yHeight);
+  }
+  
+  void grow() {
     if (mousePressed && (mouseButton == RIGHT)) {
       xWidth++;
       yHeight++;
     }
-    rect(xPos, yPos, xWidth, yHeight);
   }
 }
