@@ -39,17 +39,12 @@ class Blokje {
   }
   
   void move() {
-    if (mousePressed && (mouseButton == LEFT)) {
       xPos++;
       yPos++;
-    }
-    rect(xPos, yPos, xWidth, yHeight);
   }
   
   void grow() {
-    if (mousePressed && (mouseButton == RIGHT)) {
       xWidth++;
       yHeight++;
-    }
   }
 }
