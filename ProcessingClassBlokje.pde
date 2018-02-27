@@ -58,7 +58,6 @@ class Blokje {
   Blokje(float xPos, float yPos) {
     this.xPos = xPos;
     this.yPos = yPos;
-    rect(xPos, yPos, xWidth, yHeight);
   }
   
   void update() {
